@@ -1,0 +1,987 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #ffffff;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Header ────────────────────────────────────────────── */
+.header {
+  flex-shrink: 0;
+  padding: 1.4rem 1.8rem 1rem;
+  border-bottom: 1.5px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.backBtn {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  color: #00b09b;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0 0.2rem;
+  transition: opacity 0.15s;
+}
+.backBtn:hover { opacity: 0.7; }
+
+.title {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.dueAmount {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 800;
+  color: #00b09b;
+  letter-spacing: -0.03em;
+  background: #e6f7f5;
+  padding: 0.3rem 0.9rem;
+  border-radius: 0.6rem;
+}
+
+/* ── Section label ─────────────────────────────────────── */
+.section {
+  flex-shrink: 0;
+  padding: 1.2rem 1.8rem 0.6rem;
+}
+
+.sectionLabel {
+  font-size: clamp(0.7rem, 1.2vw, 0.82rem);
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  margin: 0 0 0.9rem;
+}
+
+/* ── Main method list (idle screen) ────────────────────── */
+.mainMethodList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.mainMethodBtn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 1rem;
+  background: #f9fafb;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  outline: none;
+  width: 100%;
+}
+
+.mainMethodBtn:hover {
+  border-color: #66c9be;
+  background: #f5f3ff;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.1);
+}
+
+.mainMethodLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+}
+
+.mainMethodIcon {
+  width: clamp(38px, 5.5vw, 52px);
+  height: clamp(38px, 5.5vw, 52px);
+  background: #f3f4f6;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  flex-shrink: 0;
+}
+
+.seuropayIcon {
+  background: linear-gradient(135deg, #009688, #00c9a7);
+  color: #ffffff;
+  font-weight: 900;
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+}
+
+.mainMethodText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.15rem;
+}
+
+.mainMethodName {
+  font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.mainMethodDesc {
+  font-size: clamp(0.65rem, 1.1vw, 0.8rem);
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+.mainMethodChevron {
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  color: #d1d5db;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* ── SeuroPay sub-menu ──────────────────────────────────── */
+.seuropayHeader {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1.4rem 1.8rem 0.8rem;
+}
+
+.seuropayBadge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #1a1a2e;
+  color: #00c9a7;
+  font-size: clamp(0.75rem, 1.3vw, 0.9rem);
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  border-radius: 2rem;
+}
+
+.seuropayBadgeIcon {
+  width: 20px;
+  height: 20px;
+  background: #00b09b;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 900;
+  font-size: 0.85rem;
+}
+
+.seuropayTitle {
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  text-align: center;
+}
+
+.seuropayList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 0.5rem 1.8rem;
+}
+
+.seuropayOption {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.1rem 1.2rem;
+  background: #1a1a2e;
+  border: 2px solid #2d2d4e;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  outline: none;
+  width: 100%;
+}
+
+.seuropayOption:hover {
+  border-color: #00b09b;
+  background: #16213e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.2);
+}
+
+.seuropayOptionIcon {
+  width: clamp(38px, 5.5vw, 50px);
+  height: clamp(38px, 5.5vw, 50px);
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00c9a7;
+  flex-shrink: 0;
+}
+
+.seuropayOptionIcon svg {
+  width: clamp(18px, 2.8vw, 26px);
+  height: clamp(18px, 2.8vw, 26px);
+}
+
+.seuropayOptionText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  flex: 1;
+}
+
+.seuropayOptionName {
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+.seuropayOptionDesc {
+  font-size: clamp(0.68rem, 1.1vw, 0.82rem);
+  color: #64748b;
+  font-weight: 500;
+}
+
+.seuropayChevron {
+  font-size: clamp(1.2rem, 2vw, 1.5rem);
+  color: #4a4a72;
+  font-weight: 300;
+  line-height: 1;
+}
+
+/* ── Method detail screens (card / nfc / qr) ──────────── */
+.methodDetail {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1rem 1.8rem;
+  text-align: center;
+}
+
+/* Clickable variant — fills space and signals interactivity */
+.methodDetailClickable {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  padding: 1rem 1.8rem;
+  text-align: center;
+  cursor: pointer;
+  transition: background 0.15s ease;
+  outline: none;
+}
+
+.methodDetailClickable:hover {
+  background: #fafbff;
+}
+
+.methodDetailClickable:active {
+  background: #f0f0ff;
+}
+
+/* Countdown pill */
+.countdownPill {
+  font-size: clamp(0.7rem, 1.2vw, 0.82rem);
+  font-weight: 600;
+  color: #00b09b;
+  background: #e6f7f5;
+  border: 1.5px solid #99ddd6;
+  padding: 0.3rem 0.9rem;
+  border-radius: 2rem;
+  letter-spacing: 0.02em;
+}
+
+.methodDetailIcon {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  line-height: 1;
+}
+
+.methodDetailTitle {
+  font-size: clamp(1rem, 1.9vw, 1.3rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0.2rem 0 0;
+}
+
+.methodDetailHint {
+  font-size: clamp(0.75rem, 1.3vw, 0.9rem);
+  color: #6b7280;
+  margin: 0;
+  max-width: 24ch;
+  line-height: 1.5;
+}
+
+/* NFC ripple animation */
+.nfcRipple {
+  position: relative;
+  width: clamp(70px, 10vw, 100px);
+  height: clamp(70px, 10vw, 100px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nfcRippleRing {
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid #00b09b;
+  animation: ripple 1.8s ease-out infinite;
+  opacity: 0;
+}
+
+.nfcRippleRing:nth-child(1) { animation-delay: 0s; }
+.nfcRippleRing:nth-child(2) { animation-delay: 0.6s; }
+
+@keyframes ripple {
+  0%   { width: 60%; height: 60%; opacity: 0.7; }
+  100% { width: 160%; height: 160%; opacity: 0; }
+}
+
+.nfcCore {
+  width: clamp(52px, 7.5vw, 72px);
+  height: clamp(52px, 7.5vw, 72px);
+  background: linear-gradient(135deg, #009688, #00c9a7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+/* QR frame */
+.qrFrame {
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 0.85rem;
+  width: clamp(110px, 17vw, 155px);
+  aspect-ratio: 1;
+}
+
+.qrSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.qrAmount {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 800;
+  color: #00b09b;
+  letter-spacing: -0.02em;
+  background: #e6f7f5;
+  padding: 0.3rem 1rem;
+  border-radius: 0.6rem;
+}
+
+/* ── Pay button section ─────────────────────────────────── */
+.paySection {
+  flex-shrink: 0;
+  padding: 0.8rem 1.8rem;
+}
+
+.payBtn {
+  width: 100%;
+  padding: clamp(0.9rem, 1.8vh, 1.2rem) 1rem;
+  background: linear-gradient(135deg, #00b09b, #00c9a7);
+  color: #ffffff;
+  font-size: clamp(0.9rem, 1.7vw, 1.15rem);
+  font-weight: 700;
+  border: none;
+  border-radius: 0.9rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  letter-spacing: -0.01em;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+}
+
+.payBtn:hover {
+  background: linear-gradient(135deg, #009688, #00b09b);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+}
+
+.payBtn:active { transform: translateY(0); }
+
+/* ── Footer ─────────────────────────────────────────────── */
+.footer {
+  flex-shrink: 0;
+  padding: 0 1.8rem 1.4rem;
+}
+
+.cancelBtn {
+  width: 100%;
+  padding: clamp(0.65rem, 1.3vh, 0.85rem) 1rem;
+  background: transparent;
+  color: #ef4444;
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  font-weight: 600;
+  border: 1.5px solid #fecaca;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cancelBtn:hover {
+  background: #fef2f2;
+  border-color: #ef4444;
+}
+
+/* ── Status screens ─────────────────────────────────────── */
+.statusScreen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.6rem;
+  padding: 1.6rem 1.8rem 1.4rem;
+  text-align: center;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+.processingSpinner {
+  width: clamp(48px, 8vw, 72px);
+  height: clamp(48px, 8vw, 72px);
+  border: 5px solid #e5e7eb;
+  border-top-color: #00b09b;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+  flex-shrink: 0;
+  margin-bottom: 0.4rem;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.statusTitle {
+  font-size: clamp(1.1rem, 2.2vw, 1.4rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+}
+
+.statusSub {
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Success */
+.successScreen .checkIcon {
+  width: clamp(52px, 8vw, 72px);
+  height: clamp(52px, 8vw, 72px);
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+  flex-shrink: 0;
+  margin-bottom: 0.2rem;
+}
+
+/* Receipt */
+.receipt {
+  width: 100%;
+  background: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 0.9rem;
+  padding: 0.85rem 1rem;
+  text-align: left;
+  margin-top: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.receiptShopName {
+  font-size: clamp(0.82rem, 1.4vw, 0.98rem);
+  font-weight: 800;
+  color: #111827;
+  text-align: center;
+  margin: 0 0 0.7rem;
+  letter-spacing: 0.01em;
+}
+
+/* Shared table */
+.receiptTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 0.15rem;
+}
+
+.receiptTh {
+  font-size: clamp(0.62rem, 1vw, 0.74rem);
+  font-weight: 700;
+  color: #374151;
+  padding: 0.18rem 0.25rem;
+  text-align: left;
+  border-bottom: 1.5px solid #d1d5db;
+}
+
+.receiptThRight {
+  text-align: right;
+}
+
+.receiptTr:nth-child(even) {
+  background: #f3f4f6;
+}
+
+.receiptTd {
+  font-size: clamp(0.65rem, 1.1vw, 0.78rem);
+  color: #374151;
+  padding: 0.22rem 0.25rem;
+  text-align: left;
+  font-weight: 500;
+}
+
+.receiptTdRight {
+  text-align: right;
+  font-weight: 600;
+}
+
+/* Shared row (key–value) */
+.receiptRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.2rem 0.25rem;
+}
+
+/* Grand total */
+.receiptGrandTotal {
+  font-size: clamp(0.85rem, 1.45vw, 1rem);
+  font-weight: 800;
+  color: #111827;
+  padding: 0.3rem 0.25rem;
+}
+
+/* Section group */
+.receiptSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.receiptSectionHeader {
+  font-size: clamp(0.68rem, 1.1vw, 0.8rem);
+  font-weight: 700;
+  color: #374151;
+  padding: 0.28rem 0.25rem 0.1rem;
+}
+
+.receiptLabel {
+  font-size: clamp(0.65rem, 1.05vw, 0.77rem);
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.receiptValue {
+  font-size: clamp(0.65rem, 1.05vw, 0.77rem);
+  color: #374151;
+  font-weight: 600;
+  text-align: right;
+}
+
+.receiptCustomerCard {
+  font-size: clamp(0.6rem, 0.95vw, 0.7rem);
+  letter-spacing: 0.03em;
+  color: #6b7280;
+}
+
+.receiptDivider {
+  border: none;
+  border-top: 1.5px dashed #d1d5db;
+  margin: 0.45rem 0;
+}
+
+.newOrderBtn {
+  flex-shrink: 0;
+  margin-top: 0.6rem;
+  padding: clamp(0.7rem, 1.4vh, 1rem) 2.2rem;
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  font-weight: 700;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.newOrderBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
+}
+
+/* Declined */
+.declinedScreen .crossIcon {
+  width: clamp(52px, 8vw, 72px);
+  height: clamp(52px, 8vw, 72px);
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  color: white;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.35);
+  flex-shrink: 0;
+  margin-bottom: 0.2rem;
+}
+
+.retryBtn {
+  margin-top: 0.8rem;
+  padding: clamp(0.7rem, 1.4vh, 1rem) 2.2rem;
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  color: white;
+  font-size: clamp(0.9rem, 1.5vw, 1.05rem);
+  font-weight: 700;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
+}
+
+.retryBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.45);
+}
+
+
+.header {
+  flex-shrink: 0;
+  padding: 1.4rem 1.8rem 1rem;
+  border-bottom: 1.5px solid #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.dueAmount {
+  font-size: clamp(1.1rem, 2.2vw, 1.6rem);
+  font-weight: 800;
+  color: #00b09b;
+  letter-spacing: -0.03em;
+  background: #e6f7f5;
+  padding: 0.3rem 0.9rem;
+  border-radius: 0.6rem;
+}
+
+/* Section */
+.section {
+  flex-shrink: 0;
+  padding: 1.2rem 1.8rem 0.6rem;
+}
+
+.sectionLabel {
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+  font-weight: 600;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.8rem;
+}
+
+/* Payment Method Grid */
+.methodGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.methodBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 1rem 0.5rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 1rem;
+  background: #f9fafb;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  outline: none;
+}
+
+.methodBtn:hover {
+  border-color: #66c9be;
+  background: #f5f3ff;
+  transform: translateY(-1px);
+}
+
+.methodBtn.active {
+  border-color: #00b09b;
+  background: #e6f7f5;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+}
+
+.methodIcon {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1;
+}
+
+.methodName {
+  font-size: clamp(0.75rem, 1.3vw, 0.95rem);
+  font-weight: 700;
+  color: #1a1a2e;
+}
+
+.methodDesc {
+  font-size: clamp(0.6rem, 1vw, 0.72rem);
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* QR Code */
+.qrSection {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1.8rem;
+  gap: 0.6rem;
+}
+
+.qrFrame {
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 1rem;
+  padding: 0.8rem;
+  width: clamp(110px, 18vw, 160px);
+  aspect-ratio: 1;
+}
+
+.qrSvg {
+  width: 100%;
+  height: 100%;
+}
+
+.qrHint {
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+  color: #6b7280;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* Pay Section */
+.paySection {
+  flex-shrink: 0;
+  padding: 0.8rem 1.8rem;
+}
+
+.payBtn {
+  width: 100%;
+  padding: clamp(0.9rem, 1.8vh, 1.2rem) 1rem;
+  background: linear-gradient(135deg, #00b09b, #00c9a7);
+  color: #ffffff;
+  font-size: clamp(0.95rem, 1.8vw, 1.25rem);
+  font-weight: 700;
+  border: none;
+  border-radius: 0.9rem;
+  cursor: pointer;
+  transition: all 0.18s ease;
+  letter-spacing: -0.01em;
+  box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+}
+
+.payBtn:hover {
+  background: linear-gradient(135deg, #009688, #00b09b);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.45);
+}
+
+.payBtn:active {
+  transform: translateY(0);
+}
+
+.payBtnDisabled {
+  width: 100%;
+  padding: clamp(0.9rem, 1.8vh, 1.2rem) 1rem;
+  background: #f3f4f6;
+  color: #9ca3af;
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  font-weight: 600;
+  border: 2px dashed #d1d5db;
+  border-radius: 0.9rem;
+  cursor: not-allowed;
+}
+
+/* Footer */
+.footer {
+  flex-shrink: 0;
+  padding: 0 1.8rem 1.4rem;
+}
+
+.cancelBtn {
+  width: 100%;
+  padding: clamp(0.65rem, 1.3vh, 0.85rem) 1rem;
+  background: transparent;
+  color: #ef4444;
+  font-size: clamp(0.8rem, 1.4vw, 0.95rem);
+  font-weight: 600;
+  border: 1.5px solid #fecaca;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cancelBtn:hover {
+  background: #fef2f2;
+  border-color: #ef4444;
+}
+
+/* ─── Status Screens ─── */
+.statusScreen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  padding: 2rem 1.8rem;
+  text-align: center;
+}
+
+.processingSpinner {
+  width: clamp(48px, 8vw, 72px);
+  height: clamp(48px, 8vw, 72px);
+  border: 5px solid #e5e7eb;
+  border-top-color: #00b09b;
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.statusTitle {
+  font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0.4rem 0 0;
+}
+
+.statusSub {
+  font-size: clamp(0.8rem, 1.5vw, 1rem);
+  color: #6b7280;
+  margin: 0;
+}
+
+.statusHint {
+  font-size: clamp(0.75rem, 1.3vw, 0.9rem);
+  color: #9ca3af;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  margin: 0.2rem 0 0;
+}
+
+/* Success */
+.successScreen .checkIcon {
+  width: clamp(56px, 9vw, 80px);
+  height: clamp(56px, 9vw, 80px);
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+}
+
+.newOrderBtn {
+  margin-top: 0.8rem;
+  padding: clamp(0.7rem, 1.4vh, 1rem) 2.5rem;
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  font-weight: 700;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+}
+
+.newOrderBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.45);
+}
+
+/* Declined */
+.declinedScreen .crossIcon {
+  width: clamp(56px, 9vw, 80px);
+  height: clamp(56px, 9vw, 80px);
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  color: white;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.35);
+}
+
+.retryBtn {
+  margin-top: 0.8rem;
+  padding: clamp(0.7rem, 1.4vh, 1rem) 2.5rem;
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  color: white;
+  font-size: clamp(0.9rem, 1.6vw, 1.1rem);
+  font-weight: 700;
+  border: none;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
+}
+
+.retryBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.45);
+}
